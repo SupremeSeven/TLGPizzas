@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TLGPizza
 {
-    class Program
+    class TLGPizza
     {
         static void Main(string[] args)
         {
