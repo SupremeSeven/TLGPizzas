@@ -1,6 +1,7 @@
 # TLGPizza
 
 ### Team Members:
+* Quinn Liu
 * James Woodson
 * Britini Malloy
 * Renard Burnett
