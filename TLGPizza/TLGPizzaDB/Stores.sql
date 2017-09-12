@@ -1,0 +1,20 @@
+USE [TLGPizza]
+GO
+
+/****** Object:  Table [TLGPizza].[Stores]    Script Date: 9/12/2017 3:16:42 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [TLGPizza].[Stores](
+	[store_id] [int] NOT NULL,
+	[store_name] [varchar](max) NOT NULL,
+ CONSTRAINT [PK_Stores] PRIMARY KEY CLUSTERED 
+(
+	[store_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
