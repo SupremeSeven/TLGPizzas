@@ -1,7 +1,7 @@
 USE [master]
 GO
 
-/****** Object:  Database [TLGPizza]    Script Date: 9/13/2017 1:19:50 PM ******/
+/****** Object:  Database [TLGPizza]    Script Date: 9/12/2017 3:13:27 PM ******/
 CREATE DATABASE [TLGPizza]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -34,7 +34,7 @@ GO
 ALTER DATABASE [TLGPizza] SET ARITHABORT OFF 
 GO
 
-ALTER DATABASE [TLGPizza] SET AUTO_CLOSE ON 
+ALTER DATABASE [TLGPizza] SET AUTO_CLOSE OFF 
 GO
 
 ALTER DATABASE [TLGPizza] SET AUTO_SHRINK OFF 
