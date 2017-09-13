@@ -1,7 +1,7 @@
 USE [TLGPizza]
 GO
 
-/****** Object:  Table [TLGPizza].[Order]    Script Date: 9/13/2017 1:23:41 PM ******/
+/****** Object:  Table [TLGPizza].[Order]    Script Date: 9/13/2017 1:41:05 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -30,14 +30,14 @@ ALTER TABLE [TLGPizza].[Order] CHECK CONSTRAINT [FK_Order_Assembly]
 GO
 
 ALTER TABLE [TLGPizza].[Order]  WITH CHECK ADD  CONSTRAINT [FK_Order_Ordering_Store] FOREIGN KEY([OrderingStoreId])
-REFERENCES [TLGPizza].[Stores] ([StoreId])
+REFERENCES [TLGPizza].[Store] ([StoreId])
 GO
 
 ALTER TABLE [TLGPizza].[Order] CHECK CONSTRAINT [FK_Order_Ordering_Store]
 GO
 
 ALTER TABLE [TLGPizza].[Order]  WITH CHECK ADD  CONSTRAINT [FK_Order_Producing_Store] FOREIGN KEY([ProducingStoreId])
-REFERENCES [TLGPizza].[Stores] ([StoreId])
+REFERENCES [TLGPizza].[Store] ([StoreId])
 GO
 
 ALTER TABLE [TLGPizza].[Order] CHECK CONSTRAINT [FK_Order_Producing_Store]
