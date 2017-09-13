@@ -1,7 +1,7 @@
 USE [TLGPizza]
 GO
 
-/****** Object:  Table [TLGPizza].[Payment]    Script Date: 9/13/2017 1:23:51 PM ******/
+/****** Object:  Table [TLGPizza].[Payment]    Script Date: 9/13/2017 1:41:16 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -31,7 +31,7 @@ ALTER TABLE [TLGPizza].[Payment] CHECK CONSTRAINT [FK_Payment_PaymentDue]
 GO
 
 ALTER TABLE [TLGPizza].[Payment]  WITH CHECK ADD  CONSTRAINT [FK_Payment_Prepayments] FOREIGN KEY([PrepaymentId])
-REFERENCES [TLGPizza].[Prepayments] ([PrepaymentId])
+REFERENCES [TLGPizza].[Prepayment] ([PrepaymentId])
 GO
 
 ALTER TABLE [TLGPizza].[Payment] CHECK CONSTRAINT [FK_Payment_Prepayments]

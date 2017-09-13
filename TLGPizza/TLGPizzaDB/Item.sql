@@ -1,7 +1,7 @@
 USE [TLGPizza]
 GO
 
-/****** Object:  Table [TLGPizza].[Item]    Script Date: 9/13/2017 1:23:29 PM ******/
+/****** Object:  Table [TLGPizza].[Item]    Script Date: 9/13/2017 1:40:56 PM ******/
 SET ANSI_NULLS ON
 GO
 
