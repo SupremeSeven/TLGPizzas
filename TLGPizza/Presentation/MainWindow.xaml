@@ -8,7 +8,10 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <ListBox HorizontalAlignment="Left" Height="196" Margin="22,60,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="22,17,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="22,17,0,0" TextWrapping="Wrap" Text="Select Store:" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+        <ListBox HorizontalAlignment="Left" Height="196" Margin="340,60,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="340,17,0,0" TextWrapping="Wrap" Text="Results:" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+        <Button Content="Show Sales" HorizontalAlignment="Left" Margin="204,134,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 
     </Grid>
 </Window>
