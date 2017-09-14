@@ -15,8 +15,7 @@ namespace Presentation
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            string[] listItems = { "testStore1", "testStore2", "testStore3" };
-
+            
 
         }
     }
