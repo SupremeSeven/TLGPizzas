@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 using System.Xml.Schema;
 using System.Reflection;
 
-namespace DatagramTest
+namespace TLGPizza
 {
     class Program
     {
@@ -23,16 +23,6 @@ namespace DatagramTest
                 data = (Datagram)serializer.Deserialize(datagramReader);
             }
 
-            Console.WriteLine("Woohoo!");
-
-            //            PrintProperties(data);
-
-            GenericEntity<DatagramTransactionOrderAssembly> SQLtest = new GenericEntity<DatagramTransactionOrderAssembly>(data.Transaction.Order.Assembly[0]);
-
-            string query = SQLtest.InsertString();
-            Console.WriteLine(query);
-            SQLtest.InsertDatabase();
-            //SQLtest.GetDatabaseSchema();
         }
 
         static void PrintData()
