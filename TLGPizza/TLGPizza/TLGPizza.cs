@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Collections.Specialized;
+
 
 namespace TLGPizza
 {
@@ -18,9 +20,7 @@ namespace TLGPizza
 
     class Stores
     {
-        Stores stores;
-        private decimal totalSales;
-
+        private List<Store> stores = new List<Stores>();
 
         public Stores()
         {
@@ -47,16 +47,33 @@ namespace TLGPizza
                 da.Fill(table);
             }
 
+            NameValueCollection storeData = new NameValueCollection();
 
+            foreach(DataRow row in table.Rows)
+            {
+                storeData.Add((string)row[0], (string)row[1]);
+            }
+
+            foreach(string storeName in storeData)
+            {
+                List<decimal> sales = new List<decimal>();
+                var values = storeData.GetValues(storeName);
+                foreach (var numStr in values)
+                {
+                    decimal sale = Convert.ToDecimal(numStr);
+                    sales.Add(sale);
+                }
+                stores.Add(new Store(storeName, sales));
+            }
         }
     }
 
     class Store
     {
         private string name;
-        private decimal[] sales;
+        private List<decimal> sales;
 
-        public Store(string name, decimal[] payment, )
+        public Store(string name, List<decimal> payment)
         {
         }
 
@@ -65,7 +82,7 @@ namespace TLGPizza
             get
             {
                 decimal sum = 0.00m;
-                for (int i = 0; i < sales.Length; i++)
+                for (int i = 0; i < sales.Count; i++)
                 {
                     sum += sales[i];
                 }
