@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Datagram Id="Id1" Timestamp="1900-01-01T01:01:01-08:00" xmlns="http://Namespaces.TLGPizza.com/Datagram-v1.1">
+  <Transaction Id="Id1" Timestamp="1900-01-01T01:01:01-08:00">
+    <Customer Id="Id1" Language="en">
+      <Name>Name1</Name>
+      <Address Id="Id1" Type="Contact">
+        <AddressLine1>AddressLine11</AddressLine1>
+        <AddressLine2>AddressLine21</AddressLine2>
+        <City>City1</City>
+        <StateProvince>StateProvince1</StateProvince>
+        <PostalCode>PostalCode1</PostalCode>
+        <MobileTelephone>MobileTelephone1</MobileTelephone>
+        <AlternateTelephone>AlternateTelephone1</AlternateTelephone>
+        <Notes>Notes1</Notes>
+      </Address>
+      <Address Id="Id2" Type="Delivery">
+        <AddressLine1>AddressLine12</AddressLine1>
+        <AddressLine2>AddressLine22</AddressLine2>
+        <City>City2</City>
+        <StateProvince>StateProvince2</StateProvince>
+        <PostalCode>PostalCode2</PostalCode>
+        <MobileTelephone>MobileTelephone2</MobileTelephone>
+        <AlternateTelephone>AlternateTelephone2</AlternateTelephone>
+        <Notes>Notes2</Notes>
+      </Address>
+      <Address Id="Id3" Type="Contact">
+        <AddressLine1>AddressLine13</AddressLine1>
+        <AddressLine2>AddressLine23</AddressLine2>
+        <City>City3</City>
+        <StateProvince>StateProvince3</StateProvince>
+        <PostalCode>PostalCode3</PostalCode>
+        <MobileTelephone>MobileTelephone3</MobileTelephone>
+        <AlternateTelephone>AlternateTelephone3</AlternateTelephone>
+        <Notes>Notes3</Notes>
+      </Address>
+      <Notes>Notes1</Notes>
+    </Customer>
+    <Order OrderingStore="1" ProducingStore="1" ReadyTime="1900-01-01T01:01:01-08:00">
+      <Assembly SKU="SKU1" Description="Description1" Quantity="1" UnitPrice="1" Taxable="true">
+        <Item>
+          <Component SKU="SKU1" Description="Description1" Quantity="1" UnitPrice="1" Taxable="true" />
+          <Component SKU="SKU2" Description="Description2" Quantity="-79228162514264337593543950335" UnitPrice="-79228162514264337593543950335" Taxable="false" />
+          <Component SKU="SKU3" Description="Description3" Quantity="79228162514264337593543950335" UnitPrice="79228162514264337593543950335" Taxable="true" />
+          <Notes>Notes1</Notes>
+        </Item>
+        <Item>
+          <Component SKU="SKU4" Description="Description4" Quantity="0.9" UnitPrice="0.9" Taxable="false" />
+          <Component SKU="SKU5" Description="Description5" Quantity="1.1" UnitPrice="1.1" Taxable="true" />
+          <Component SKU="SKU6" Description="Description6" Quantity="-79228162514264337593543950335" UnitPrice="-79228162514264337593543950335" Taxable="false" />
+          <Notes>Notes2</Notes>
+        </Item>
+        <Item>
+          <Component SKU="SKU7" Description="Description7" Quantity="79228162514264337593543950335" UnitPrice="79228162514264337593543950335" Taxable="true" />
+          <Component SKU="SKU8" Description="Description8" Quantity="0.8" UnitPrice="0.8" Taxable="false" />
+          <Component SKU="SKU9" Description="Description9" Quantity="1.2" UnitPrice="1.2" Taxable="true" />
+          <Notes>Notes3</Notes>
+        </Item>
+      </Assembly>
+      <Assembly SKU="SKU2" Description="Description2" Quantity="-79228162514264337593543950335" UnitPrice="-79228162514264337593543950335" Taxable="false">
+        <Item>
+          <Component SKU="SKU10" Description="Description10" Quantity="-79228162514264337593543950335" UnitPrice="-79228162514264337593543950335" Taxable="false" />
+          <Component SKU="SKU11" Description="Description11" Quantity="79228162514264337593543950335" UnitPrice="79228162514264337593543950335" Taxable="true" />
+          <Component SKU="SKU12" Description="Description12" Quantity="0.7" UnitPrice="0.7" Taxable="false" />
+          <Notes>Notes4</Notes>
+        </Item>
+        <Item>
+          <Component SKU="SKU13" Description="Description13" Quantity="1.3" UnitPrice="1.3" Taxable="true" />
+          <Component SKU="SKU14" Description="Description14" Quantity="-79228162514264337593543950335" UnitPrice="-79228162514264337593543950335" Taxable="false" />
+          <Component SKU="SKU15" Description="Description15" Quantity="79228162514264337593543950335" UnitPrice="79228162514264337593543950335" Taxable="true" />
+          <Notes>Notes5</Notes>
+        </Item>
+        <Item>
+          <Component SKU="SKU16" Description="Description16" Quantity="0.6" UnitPrice="0.6" Taxable="false" />
+          <Component SKU="SKU17" Description="Description17" Quantity="1.4" UnitPrice="1.4" Taxable="true" />
+          <Component SKU="SKU18" Description="Description18" Quantity="-79228162514264337593543950335" UnitPrice="-79228162514264337593543950335" Taxable="false" />
+          <Notes>Notes6</Notes>
+        </Item>
+      </Assembly>
+      <Assembly SKU="SKU3" Description="Description3" Quantity="79228162514264337593543950335" UnitPrice="79228162514264337593543950335" Taxable="true">
+        <Item>
+          <Component SKU="SKU19" Description="Description19" Quantity="79228162514264337593543950335" UnitPrice="79228162514264337593543950335" Taxable="true" />
+          <Component SKU="SKU20" Description="Description20" Quantity="0.5" UnitPrice="0.5" Taxable="false" />
+          <Component SKU="SKU21" Description="Description21" Quantity="1.5" UnitPrice="1.5" Taxable="true" />
+          <Notes>Notes7</Notes>
+        </Item>
+        <Item>
+          <Component SKU="SKU22" Description="Description22" Quantity="-79228162514264337593543950334" UnitPrice="-79228162514264337593543950334" Taxable="false" />
+          <Component SKU="SKU23" Description="Description23" Quantity="79228162514264337593543950334" UnitPrice="79228162514264337593543950334" Taxable="true" />
+          <Component SKU="SKU24" Description="Description24" Quantity="0.4" UnitPrice="0.4" Taxable="false" />
+          <Notes>Notes8</Notes>
+        </Item>
+        <Item>
+          <Component SKU="SKU25" Description="Description25" Quantity="1.6" UnitPrice="1.6" Taxable="true" />
+          <Component SKU="SKU26" Description="Description26" Quantity="-79228162514264337593543950334" UnitPrice="-79228162514264337593543950334" Taxable="false" />
+          <Component SKU="SKU27" Description="Description27" Quantity="79228162514264337593543950334" UnitPrice="79228162514264337593543950334" Taxable="true" />
+          <Notes>Notes9</Notes>
+        </Item>
+      </Assembly>
+      <Notes>Notes1</Notes>
+    </Order>
+    <Payment>
+      <PurchaseTotal Amount="1" />
+      <SalesTax Amount="1" Rate="1" Jurisdiction="Jurisdiction1" />
+      <SalesTax Amount="-79228162514264337593543950335" Rate="-79228162514264337593543950335" Jurisdiction="Jurisdiction2" />
+      <SalesTax Amount="79228162514264337593543950335" Rate="79228162514264337593543950335" Jurisdiction="Jurisdiction3" />
+      <VAT Amount="1" Rate="1" Jurisdiction="Jurisdiction1" />
+      <VAT Amount="-79228162514264337593543950335" Rate="-79228162514264337593543950335" Jurisdiction="Jurisdiction2" />
+      <VAT Amount="79228162514264337593543950335" Rate="79228162514264337593543950335" Jurisdiction="Jurisdiction3" />
+      <Prepayment Amount="1" DatePaid="1900-01-01" TransactionId="TransactionId1" AuthorizationCode="AuthorizationCode1" />
+      <Prepayment Amount="-79228162514264337593543950335" DatePaid="0001-01-01" TransactionId="TransactionId2" AuthorizationCode="AuthorizationCode2" />
+      <Prepayment Amount="79228162514264337593543950335" DatePaid="9999-12-31" TransactionId="TransactionId3" AuthorizationCode="AuthorizationCode3" />
+      <PaymentDue Amount="1" DueDate="1900-01-01" />
+      <Notes>Notes1</Notes>
+    </Payment>
+  </Transaction>
+</Datagram>

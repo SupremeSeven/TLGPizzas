@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataGram" targetNamespace="http://Namespaces.TLGPizza.com/Datagram-v1.1" xmlns:mstns="http://Namespaces.TLGPizza.com/Datagram-v1.1" xmlns="http://Namespaces.TLGPizza.com/Datagram-v1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+<!--
+Revision History
+v1.1 added Language attribute to Customer
+v1.1 added OrderingStore and ProducingStore attributes to Order
+v1.1 corrected syntax error in definition of Type attribute of Customer
+-->
+  <xs:element name="Datagram">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Transaction" minOccurs="1"  maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Customer" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" msdata:Ordinal="0" />
+                    <xs:element name="Address" minOccurs="1" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="AddressLine1" type="xs:string" minOccurs="0" maxOccurs="1" msdata:Ordinal="0" />
+                          <xs:element name="AddressLine2" type="xs:string" minOccurs="0" msdata:Ordinal="1" />
+                          <xs:element name="City" type="xs:string" minOccurs="0" msdata:Ordinal="2" />
+                          <xs:element name="StateProvince" type="xs:string" minOccurs="0" msdata:Ordinal="3" />
+                          <xs:element name="PostalCode" type="xs:string" minOccurs="0" msdata:Ordinal="4" />
+                          <xs:element name="MobileTelephone" type="xs:string" minOccurs="0" msdata:Ordinal="5" />
+                          <xs:element name="AlternateTelephone" type="xs:string" minOccurs="0" msdata:Ordinal="6" />
+                          <xs:element name="Notes" type="xs:string" minOccurs="0" msdata:Ordinal="7" />
+                        </xs:sequence>
+                        <xs:attribute name="Id" form="unqualified" type="xs:string" use="required" />
+                        <xs:attribute name="Type" form="unqualified" use="required" >
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:enumeration value="Contact" />
+                              <xs:enumeration value="Delivery" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Notes" type="xs:string" minOccurs="0" msdata:Ordinal="2" />
+                  </xs:sequence>
+                  <xs:attribute name="Id" form="unqualified" type="xs:string" use="required" />
+                  <xs:attribute name="Language" form="unqualified" type="xs:language" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Order" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Assembly" minOccurs="1" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Item" minOccurs="1" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Component" minOccurs="1" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:attribute name="SKU" form="unqualified" type="xs:string" use="required" />
+                                    <xs:attribute name="Description" form="unqualified" type="xs:string" />
+                                    <xs:attribute name="Quantity" form="unqualified" type="xs:decimal" use="required" >
+                                      
+                                    </xs:attribute>
+                                    <xs:attribute name="UnitPrice" form="unqualified" type="xs:decimal" use="required" />
+                                    <xs:attribute name="Taxable" form="unqualified" type="xs:boolean" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Notes" type="xs:string" minOccurs="0" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="SKU" form="unqualified" type="xs:string" use="required" />
+                        <xs:attribute name="Description" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Quantity" form="unqualified" type="xs:integer" use="required" />
+                        <xs:attribute name="UnitPrice" form="unqualified" type="xs:decimal" use="required" />
+                        <xs:attribute name="Taxable" form="unqualified" type="xs:boolean" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Notes" type="xs:string" minOccurs="0" msdata:Ordinal="1" />
+                  </xs:sequence>
+                  <xs:attribute name="OrderingStore" form="unqualified" type="xs:integer" use="required" />
+                  <xs:attribute name="ProducingStore" form="unqualified" type="xs:integer" use="required" />
+                  <xs:attribute name="ReadyTime" form="unqualified" type="xs:dateTime" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Payment" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PurchaseTotal" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:attribute name="Amount" form="unqualified" type="xs:decimal" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="SalesTax" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="Amount" form="unqualified" type="xs:decimal" use="required" />
+                        <xs:attribute name="Rate" form="unqualified" type="xs:decimal" use="required" />
+                        <xs:attribute name="Jurisdiction" form="unqualified" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="VAT" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="Amount" form="unqualified" type="xs:decimal" use="required" />
+                        <xs:attribute name="Rate" form="unqualified" type="xs:decimal" use="required" />
+                        <xs:attribute name="Jurisdiction" form="unqualified" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Prepayment" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="Amount" form="unqualified" type="xs:decimal" use="required" />
+                        <xs:attribute name="DatePaid" form="unqualified" type="xs:date" use="required" />
+                        <xs:attribute name="TransactionId" form="unqualified" type="xs:string" use="required" />
+                        <xs:attribute name="AuthorizationCode" form="unqualified" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="PaymentDue" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:attribute name="Amount" form="unqualified" type="xs:decimal" use="required" />
+                        <xs:attribute name="DueDate" form="unqualified" type="xs:date" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Notes" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="Id" form="unqualified" type="xs:string" use="required" />
+            <xs:attribute name="Timestamp" form="unqualified" type="xs:dateTime" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="Id" form="unqualified" type="xs:string" use="required" />
+      <xs:attribute name="Timestamp" form="unqualified" type="xs:dateTime" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
