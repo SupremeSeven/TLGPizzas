@@ -1,0 +1,22 @@
+USE [TLGPizza]
+GO
+
+/****** Object:  Table [TLGPizza].[Tax]    Script Date: 9/13/2017 1:42:02 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [TLGPizza].[Tax](
+	[TaxId] [int] NOT NULL,
+	[Amount] [decimal](18, 0) NOT NULL,
+	[Rate] [decimal](18, 0) NOT NULL,
+	[Jurisdiction] [varchar](50) NULL,
+ CONSTRAINT [PK_Taxes] PRIMARY KEY CLUSTERED 
+(
+	[TaxId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+

@@ -1,0 +1,22 @@
+﻿<Window x:Class="Presentation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Presentation"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <ListBox Name="StoreList" HorizontalAlignment="Left" Height="196" Margin="22,60,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="22,17,0,0" TextWrapping="Wrap" Text="Select Store:" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+        <ListBox HorizontalAlignment="Left" Height="196" Margin="340,60,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="340,17,0,0" TextWrapping="Wrap" Text="Results:" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+        <Button Name="ShowSales" Content="Show Sales" 
+                HorizontalAlignment="Left" Margin="204,134,0,0" 
+                VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="TestConnection" 
+                HorizontalAlignment="Left" Margin="194,25,0,0" 
+                VerticalAlignment="Top" Width="99" Click="TestConnection_Click"/>
+
+    </Grid>
+</Window>

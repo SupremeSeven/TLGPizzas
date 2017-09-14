@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{777F977B-F58A-4D09-A128-D69DC858AB9C}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>TLGPizza</RootNamespace>
-    <AssemblyName>TLGPizza</AssemblyName>
+    <ProjectGuid>{B82AAE28-5A79-430C-90E4-53DD7780F167}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>DatagramTest</RootNamespace>
+    <AssemblyName>DatagramTest</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -31,12 +31,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,7 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TLGPizza.cs" />
+    <Compile Include="Datagram.cs" />
+    <Compile Include="DatagramPartial.cs" />
+    <Compile Include="DatagramTransactionOrderAssembly.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

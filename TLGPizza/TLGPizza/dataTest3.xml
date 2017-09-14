@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Datagram Id="str1234" Timestamp="2012-12-13T12:12:12" xmlns="http://Namespaces.TLGPizza.com/Datagram-v1.1">
+  <Transaction Id="str1234" Timestamp="2012-12-13T12:12:12">
+    <Customer Id="str1234" Language="???">
+      <Name>str1234 last1234</Name>
+      <Address Id="str1234" Type="Contact">
+        <AddressLine1>str1234</AddressLine1>
+        <AddressLine2>str1234</AddressLine2>
+        <City>str1234</City>
+        <StateProvince>str1234</StateProvince>
+        <PostalCode>12345</PostalCode>
+        <MobileTelephone>123456789</MobileTelephone>
+        <AlternateTelephone>123456789</AlternateTelephone>
+        <Notes>str1234</Notes>
+      </Address>
+      <Notes>str1234</Notes>
+    </Customer>
+    <Order OrderingStore="1234" ProducingStore="1234" ReadyTime="2012-12-13T12:12:12">
+      <Assembly SKU="str1234" Description="str1234" Quantity="1234" UnitPrice="123.45" Taxable="true">
+        <Item>
+          <Component SKU="str1234" Description="str1234" Quantity="123.45" UnitPrice="123.45" Taxable="true" />
+          <Notes>str1234</Notes>
+        </Item>
+      </Assembly>
+      <Notes>str1234</Notes>
+    </Order>
+    <Payment>
+      <PurchaseTotal Amount="123.45" />
+      <SalesTax Amount="123.45" Rate="123.45" Jurisdiction="str1234" />
+      <VAT Amount="123.45" Rate="123.45" Jurisdiction="str1234" />
+      <Prepayment Amount="123.45" DatePaid="2012-12-13" TransactionId="str1234" AuthorizationCode="str1234" />
+      <PaymentDue Amount="123.45" DueDate="2012-12-13" />
+      <Notes>str1234</Notes>
+    </Payment>
+  </Transaction>
+</Datagram>
