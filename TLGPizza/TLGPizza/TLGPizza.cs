@@ -23,9 +23,8 @@ namespace TLGPizza
 
         public Stores()
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string StoreSales = @"SELECT s.Name, pd.Amount, p.PurchaseTotal
+
+            string StoreSales = @"SELECT s.Name, pd.Amount, p.PurchaseTotal
                                         FROM TLGPizza.Store s
                                         JOIN TLGPizza.Payment p
                                         ON s.StoreId = p.StoreId
@@ -33,22 +32,23 @@ namespace TLGPizza
                                         ON pd.PaymentDueId = p.PaymentDueId
                                         ORDER BY s.Name;";
 
-                using (SqlCommand cmd = new SqlCommand(StoreSales, connection))
-                {
-                    connection.Open();
-                    using (var reader = cmd.ExecuteReader())
-                    {
-                        //   for (int)
-                    }
-                    connection.Close();
-                }
+            var table = new DataTable();
+            using (var da = new SqlDataAdapter(StoreSales, "connection string"))
+            {
+                da.Fill(table);
             }
+
 
         }
     }
 
     class Store
     {
+        private string name;
+        private decimal[] sales;
 
+        public Store(string name, decimal[] sales, )
+        {
+        }
     }
 }
