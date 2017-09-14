@@ -73,8 +73,10 @@ namespace TLGPizza
         private string name;
         private List<decimal> sales;
 
-        public Store(string name, List<decimal> payment)
+        public Store(string name, List<decimal> sales)
         {
+            this.name = name;
+            this.sales = sales;
         }
 
         public decimal TotalSales
