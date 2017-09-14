@@ -13,14 +13,16 @@ namespace TLGPizza
 {
     class TLGPizza
     {
-        static void Main(string[] args)
+        static void Main()
         {
+            Stores stores = new Stores();
+            stores.PrintStoreStats();
         }
     }
 
     class Stores
     {
-        private List<Store> stores = new List<Stores>();
+        private List<Store> stores = new List<Store>();
 
         public Stores()
         {
@@ -35,6 +37,8 @@ namespace TLGPizza
 
             string constring = ConfigurationManager.ConnectionStrings["Connection_String"].ConnectionString;
 
+            Console.WriteLine(constring);
+
             string StoreSales = @"SELECT s.Name, p.PurchaseTotal
                                         FROM TLGPizza.Store s
                                         JOIN TLGPizza.Payment p
@@ -42,35 +46,52 @@ namespace TLGPizza
                                         ORDER BY s.Name;";
 
             var table = new DataTable();
-            using (var da = new SqlDataAdapter(StoreSales, "connection string"))
+            using (var da = new SqlDataAdapter(StoreSales, constring))
             {
                 da.Fill(table);
             }
 
-            NameValueCollection storeData = new NameValueCollection();
-
-            foreach(DataRow row in table.Rows)
+            foreach (DataRow row in table.Rows)
             {
-                storeData.Add((string)row[0], (string)row[1]);
+                Console.WriteLine("{0}:{1}", row[0], row[1]);
             }
+            Console.WriteLine();
+            Console.WriteLine();
 
-            foreach(string storeName in storeData)
+            Dictionary <string, List<decimal>> storeData = new Dictionary<string, List<decimal>>();
+
+            foreach (DataRow row in table.Rows)
             {
-                List<decimal> sales = new List<decimal>();
-                var values = storeData.GetValues(storeName);
-                foreach (var numStr in values)
+                if (storeData.ContainsKey((string)row[0]))
                 {
-                    decimal sale = Convert.ToDecimal(numStr);
-                    sales.Add(sale);
+                    storeData[(string)row[0]].Add((decimal)row[1]);
                 }
-                stores.Add(new Store(storeName, sales));
+                else
+                {
+                    storeData[(string)row[0]] = new List<decimal>();
+                    storeData[(string)row[0]].Add((decimal)row[1]);
+                }
+            }
+            
+            foreach (var storeName in storeData.Keys)
+            {
+                stores.Add(new Store(storeName, storeData[storeName]));
+            }
+        }
+
+        public void PrintStoreStats()
+        {
+            Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!The Store Stats!!!!!!!!!!!!!!!!!!!!!");
+            for (int i = 0; i < stores.Count; i++)
+            {
+                Console.WriteLine("{0}: {1}", stores[i].name, stores[i].TotalSales);
             }
         }
     }
 
     class Store
     {
-        private string name;
+        public string name;
         private List<decimal> sales;
 
         public Store(string name, List<decimal> sales)
