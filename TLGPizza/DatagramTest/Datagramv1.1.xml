@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Datagram Id="{7BE80E66-E421-4AF7-980E-5AF3FA2103EC}" Timestamp="2017-05-30T09:30:10-08:00" xmlns="http://Namespaces.TLGPizza.com/Datagram-v1.1">
+  <Transaction Id="{EEDF72E4-86C4-4722-B52E-4FD04F120FE5}" Timestamp="2017-05-30T09:30:10-08:00" >
+    <Customer Id="{8DF235C3-4102-45F4-B4D4-AD8853D23DED}" Language="eng" >
+      <Name></Name>
+      <Address Id="{C9A01278-EF69-478B-A186-E45C365469BE}" Type="Contact">
+        <AddressLine1></AddressLine1>
+        <AddressLine2></AddressLine2>
+        <City></City>
+        <StateProvince></StateProvince>
+        <PostalCode></PostalCode>
+        <MobileTelephone></MobileTelephone>
+        <AlternateTelephone></AlternateTelephone>
+        <Notes></Notes>
+      </Address>
+      <Address Id="{9228D9ED-C45E-4059-9B53-A41836E722B1}" Type="Delivery">
+        <AddressLine1></AddressLine1>
+        <AddressLine2></AddressLine2>
+        <City></City>
+        <StateProvince></StateProvince>
+        <PostalCode></PostalCode>
+        <MobileTelephone></MobileTelephone>
+        <AlternateTelephone></AlternateTelephone>
+        <Notes></Notes>
+      </Address>
+      <Notes></Notes>
+    </Customer>
+    <Order OrderingStore="999999" ProducingStore="999999" ReadyTime="2017-05-30T09:30:10-08:00">
+      <Assembly SKU="XXXXXXXXXXXXXX" Description="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" Quantity="9999" UnitPrice="999999.99" Taxable="1">
+        <Item>
+          <Component SKU="XXXXXXXXXXXXXX" Description="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" Quantity="99.99" UnitPrice="9999.99" Taxable="1" />
+          <Component SKU="XXXXXXXXXXXXXX" Description="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" Quantity="99.99" UnitPrice="9999.99" Taxable="1" />
+          <Component SKU="XXXXXXXXXXXXXX" Description="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" Quantity="99.99" UnitPrice="9999.99" Taxable="1" />
+          <Component SKU="XXXXXXXXXXXXXX" Description="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" Quantity="99.99" UnitPrice="9999.99" Taxable="1" />
+          <Notes></Notes>
+        </Item>
+      </Assembly>
+      <Notes></Notes>
+    </Order>
+    <Payment>
+      <PurchaseTotal Amount="999999.99" />
+      <SalesTax Amount="999999.99" Rate="99.99" Jurisdiction="XXXXXX" />
+      <VAT Amount="999999.99" Rate="99.99" Jurisdiction="XXXXXX" />
+      <Prepayment Amount="999999.99" DatePaid="2017-05-30" TransactionId="{09B5CE36-B013-413A-8173-42F16489CF40}" AuthorizationCode="{566349E6-C3D1-4B58-98F9-5A6C39459E69}" />
+      <PaymentDue Amount="999999.99" DueDate="2017-05-30" />
+      <Notes></Notes>
+    </Payment>
+  </Transaction>
+</Datagram>
