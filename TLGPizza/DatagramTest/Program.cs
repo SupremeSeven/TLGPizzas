@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 using System.Xml.Schema;
 using System.Reflection;
 
-namespace TLGPizza
+namespace DatagramTest
 {
     class Program
     {
@@ -16,12 +16,13 @@ namespace TLGPizza
 
         static void Main()
         {
-            //            using (StreamReader datagramReader = new StreamReader(@"..\..\Datagramv1.1.xml"))
-            using (StreamReader datagramReader = new StreamReader(@"..\..\TestDatagram.xml"))
+            using (StreamReader datagramReader = new StreamReader(@"..\..\dataTest3.xml"))
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(Datagram));
                 data = (Datagram)serializer.Deserialize(datagramReader);
             }
+
+            data.InsertIntoDB();
 
         }
 

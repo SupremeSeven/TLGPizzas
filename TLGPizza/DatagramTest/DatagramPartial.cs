@@ -12,7 +12,7 @@ public partial class DatagramTransactionOrderAssemblyItemComponent
 {
     public void InsertIntoDB()
     {
-        string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=Concordance;Integrated Security=True";
+        string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=TLGPizza;Integrated Security=True";
 
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
@@ -20,8 +20,6 @@ public partial class DatagramTransactionOrderAssemblyItemComponent
 
             using (SqlCommand cmd = new SqlCommand(insertStmt, connection))
             {
-                connection.Open();
-                cmd.ExecuteNonQuery();
 
                 cmd.Parameters.Add("@ComponentSKU", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@Quantity", SqlDbType.Int);
@@ -34,8 +32,9 @@ public partial class DatagramTransactionOrderAssemblyItemComponent
                 cmd.Parameters["@UnitPrice"].Value = UnitPrice;
                 cmd.Parameters["@Taxable"].Value = Taxable;
                 cmd.Parameters["@Description"].Value = Description;
-                cmd.ExecuteNonQuery();
 
+                connection.Open();
+                cmd.ExecuteNonQuery();
                 connection.Close();
             }
         }
@@ -46,7 +45,12 @@ public partial class DatagramTransactionOrderAssemblyItem
 {
     public void InsertIntoDB()
     {
-        string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=Concordance;Integrated Security=True";
+        foreach (DatagramTransactionOrderAssemblyItemComponent component in Component)
+        {
+            component.InsertIntoDB();
+        }
+
+        string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=TLGPizza;Integrated Security=True";
 
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
@@ -54,14 +58,13 @@ public partial class DatagramTransactionOrderAssemblyItem
 
             using (SqlCommand cmd = new SqlCommand(insertStmt, connection))
             {
-                connection.Open();
-                cmd.ExecuteNonQuery();
 
                 cmd.Parameters.Add("@Notes", SqlDbType.NVarChar);
 
                 cmd.Parameters["@Notes"].Value = Notes;
-                cmd.ExecuteNonQuery();
 
+                connection.Open();
+                cmd.ExecuteNonQuery();
                 connection.Close();
             }
         }
@@ -72,7 +75,12 @@ public partial class DatagramTransactionOrderAssembly
 {
     public void InsertIntoDB()
     {
-        string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=Concordance;Integrated Security=True";
+        foreach (DatagramTransactionOrderAssemblyItem item in Item)
+        {
+            item.InsertIntoDB();
+        }
+
+        string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=TLGPizza;Integrated Security=True";
 
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
@@ -80,8 +88,6 @@ public partial class DatagramTransactionOrderAssembly
 
             using (SqlCommand cmd = new SqlCommand(insertStmt, connection))
             {
-                connection.Open();
-                cmd.ExecuteNonQuery();
 
                 cmd.Parameters.Add("@Item", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@SKU", SqlDbType.NVarChar);
@@ -97,8 +103,8 @@ public partial class DatagramTransactionOrderAssembly
                 cmd.Parameters["@UnitPrice"].Value = UnitPrice;
                 cmd.Parameters["@Taxable"].Value = Taxable;
 
+                connection.Open();
                 cmd.ExecuteNonQuery();
-
                 connection.Close();
             }
         }
@@ -109,7 +115,11 @@ public partial class DatagramTransactionOrder
 {
     public void InsertIntoDB()
     {
-        string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=Concordance;Integrated Security=True";
+        foreach (DatagramTransactionOrderAssembly assembly in Assembly)
+        {
+            assembly.InsertIntoDB();
+        }
+        string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=TLGPizza;Integrated Security=True";
 
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
@@ -117,8 +127,6 @@ public partial class DatagramTransactionOrder
 
             using (SqlCommand cmd = new SqlCommand(insertStmt, connection))
             {
-                connection.Open();
-                cmd.ExecuteNonQuery();
 
                 cmd.Parameters.Add("@ReadyTime", SqlDbType.DateTime);
                 cmd.Parameters.Add("@ReadyTimeSpecified", SqlDbType.Bit);
@@ -126,8 +134,8 @@ public partial class DatagramTransactionOrder
                 cmd.Parameters["@ReadyTime"].Value = ReadyTime;
                 cmd.Parameters["@ReadyTimeSpecified"].Value = ReadyTimeSpecified;
 
+                connection.Open();
                 cmd.ExecuteNonQuery();
-
                 connection.Close();
             }
         }
@@ -138,7 +146,7 @@ public partial class DatagramTransactionCustomerAddress
 {
     public void InsertIntoDB()
     {
-        string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=Concordance;Integrated Security=True";
+        string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=TLGPizza;Integrated Security=True";
 
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
@@ -146,8 +154,6 @@ public partial class DatagramTransactionCustomerAddress
 
             using (SqlCommand cmd = new SqlCommand(insertStmt, connection))
             {
-                connection.Open();
-                cmd.ExecuteNonQuery();
 
                 cmd.Parameters.Add("@Type", SqlDbType.Int);
                 cmd.Parameters.Add("@AddressLine1", SqlDbType.NVarChar);
@@ -164,13 +170,13 @@ public partial class DatagramTransactionCustomerAddress
                 cmd.Parameters["@AddressLine2"].Value = AddressLine2;
                 cmd.Parameters["@City"].Value = City;
                 cmd.Parameters["@State"].Value = StateProvince;
-                cmd.Parameters["@PostalCode"].Value = PostalCode;
-                cmd.Parameters["@MobileTelephone"].Value = MobileTelephone;
-                cmd.Parameters["@AlternateTelephone"].Value = AlternateTelephone;
+                cmd.Parameters["@PostalCode"].Value = Int32.Parse(PostalCode);
+                cmd.Parameters["@MobileTelephone"].Value = Int32.Parse(MobileTelephone);
+                cmd.Parameters["@AlternateTelephone"].Value = Int32.Parse(AlternateTelephone);
                 cmd.Parameters["@Notes"].Value = Notes;
 
+                connection.Open();
                 cmd.ExecuteNonQuery();
-
                 connection.Close();
             }
         }
@@ -181,7 +187,12 @@ public partial class DatagramTransactionCustomer
 {
     public void InsertIntoDB()
     {
-        string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=Concordance;Integrated Security=True";
+        foreach (DatagramTransactionCustomerAddress address in Address)
+        {
+            address.InsertIntoDB();
+        }
+
+        string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=TLGPizza;Integrated Security=True";
 
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
@@ -189,8 +200,6 @@ public partial class DatagramTransactionCustomer
 
             using (SqlCommand cmd = new SqlCommand(insertStmt, connection))
             {
-                connection.Open();
-                cmd.ExecuteNonQuery();
 
                 cmd.Parameters.Add("@Language", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@LastName", SqlDbType.NVarChar);
@@ -202,8 +211,8 @@ public partial class DatagramTransactionCustomer
                 cmd.Parameters["@FirstName"].Value = Name.Split(' ')[0];
                 cmd.Parameters["@Notes"].Value = Notes;
 
+                connection.Open();
                 cmd.ExecuteNonQuery();
-
                 connection.Close();
             }
         }
@@ -220,8 +229,6 @@ public partial class DatagramTransactionPaymentPaymentDue
             string insertStmt = "INSERT INTO [TLGPizza].[PaymentDue] (Amount, DueDate, DueDateSpecified) VALUES(@amount, @dueDate, @dueDateSpecified);";
             using (SqlCommand cmd = new SqlCommand(insertStmt, connection))
             {
-                connection.Open();
-                cmd.ExecuteNonQuery();
                 cmd.CommandText = insertStmt;
 
                 cmd.Parameters.Add("@amount", SqlDbType.Decimal);
@@ -232,6 +239,7 @@ public partial class DatagramTransactionPaymentPaymentDue
                 cmd.Parameters["@dueDate"].Value = DueDate;
                 cmd.Parameters["@dueDateSpecified"].Value = DueDateSpecified;
 
+                connection.Open();
                 cmd.ExecuteNonQuery();
                 connection.Close();
             }
@@ -249,8 +257,6 @@ public partial class DatagramTransactionPaymentPrepayment
             string insertStmt = "INSERT INTO [TLGPizza].[Prepayment] (Amount, DatePaid, TransactionId, AuthorizationCode) VALUES(@amount, @datePaid, @transactionId, @authorizationCode);";
             using (SqlCommand cmd = new SqlCommand(insertStmt, connection))
             {
-                connection.Open();
-                cmd.ExecuteNonQuery();
                 cmd.CommandText = insertStmt;
 
                 cmd.Parameters.Add("@amount", SqlDbType.Decimal);
@@ -263,6 +269,7 @@ public partial class DatagramTransactionPaymentPrepayment
                 cmd.Parameters["@transactionId"].Value = TransactionId;
                 cmd.Parameters["@authorizationCode"].Value = AuthorizationCode;
 
+                connection.Open();
                 cmd.ExecuteNonQuery();
                 connection.Close();
             }
@@ -280,8 +287,6 @@ public partial class DatagramTransactionPaymentVAT
             string insertStmt = "INSERT INTO [TLGPizza].[Tax] (Amount, Rate, Jurisdiction) VALUES(@amount, @rate, @jurisdiction);";
             using (SqlCommand cmd = new SqlCommand(insertStmt, connection))
             {
-                connection.Open();
-                cmd.ExecuteNonQuery();
                 cmd.CommandText = insertStmt;
 
                 cmd.Parameters.Add("@amount", SqlDbType.Decimal);
@@ -292,6 +297,7 @@ public partial class DatagramTransactionPaymentVAT
                 cmd.Parameters["@rate"].Value = Rate;
                 cmd.Parameters["@juristiction"].Value = Jurisdiction;
 
+                connection.Open();
                 cmd.ExecuteNonQuery();
                 connection.Close();
             }
@@ -309,8 +315,6 @@ public partial class DatagramTransactionPaymentSalesTax
             string insertStmt = "INSERT INTO [TLGPizza].[Tax] (Amount, Rate, Jurisdiction) VALUES(@amount, @rate, @jurisdiction);";
             using (SqlCommand cmd = new SqlCommand(insertStmt, connection))
             {
-                connection.Open();
-                cmd.ExecuteNonQuery();
                 cmd.CommandText = insertStmt;
 
                 cmd.Parameters.Add("@amount", SqlDbType.Decimal);
@@ -321,6 +325,7 @@ public partial class DatagramTransactionPaymentSalesTax
                 cmd.Parameters["@rate"].Value = Rate;
                 cmd.Parameters["@juristiction"].Value = Jurisdiction;
 
+                connection.Open();
                 cmd.ExecuteNonQuery();
                 connection.Close();
             }
@@ -332,14 +337,26 @@ public partial class DatagramTransactionPayment
 {
     public void InsertIntoDB()
     {
+        foreach (DatagramTransactionPaymentSalesTax tax in SalesTax)
+        {
+            tax.InsertIntoDB();
+        }
+        foreach (DatagramTransactionPaymentVAT vAT in VAT)
+        {
+            vAT.InsertIntoDB();
+        }
+        foreach (DatagramTransactionPaymentPrepayment prepayment in Prepayment)
+        {
+            prepayment.InsertIntoDB();
+        }
+        PaymentDue.InsertIntoDB();
+
         string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=TLGPizza;Integrated Security=True";
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
             string insertStmt = "INSERT INTO [TLGPizza].[Payment] (PurchaseTotal, Notes) VALUES(@purchaseTotal, @notes);";
             using (SqlCommand cmd = new SqlCommand(insertStmt, connection))
             {
-                connection.Open();
-                cmd.ExecuteNonQuery();
                 cmd.CommandText = insertStmt;
 
                 cmd.Parameters.Add("@purchaseTotal", SqlDbType.Decimal);
@@ -348,6 +365,7 @@ public partial class DatagramTransactionPayment
                 cmd.Parameters["@purchaseTotal"].Value = PurchaseTotal.Amount;
                 cmd.Parameters["@notes"].Value = Notes;
 
+                connection.Open();
                 cmd.ExecuteNonQuery();
                 connection.Close();
             }
@@ -359,20 +377,23 @@ public partial class DatagramTransaction
 {
     public void InsertIntoDB()
     {
+        Customer.InsertIntoDB();
+        Order.InsertIntoDB();
+        Payment.InsertIntoDB();
+
         string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=TLGPizza;Integrated Security=True";
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
             string insertStmt = "INSERT INTO [TLGPizza].[Transaction] (TimeStamp) VALUES(@timeStamp);";
             using (SqlCommand cmd = new SqlCommand(insertStmt, connection))
             {
-                connection.Open();
-                cmd.ExecuteNonQuery();
                 cmd.CommandText = insertStmt;
 
                 cmd.Parameters.Add("@timeStamp", SqlDbType.DateTime);
 
                 cmd.Parameters["@purchaseTotal"].Value = Timestamp;
 
+                connection.Open();
                 cmd.ExecuteNonQuery();
                 connection.Close();
             }
@@ -384,20 +405,21 @@ public partial class Datagram
 {
     public void InsertIntoDB()
     {
+        Transaction.InsertIntoDB();
+
         string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=TLGPizza;Integrated Security=True";
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
             string insertStmt = "INSERT INTO [TLGPizza].[Datagram] (TimeStamp) VALUES(@timeStamp);";
             using (SqlCommand cmd = new SqlCommand(insertStmt, connection))
             {
-                connection.Open();
-                cmd.ExecuteNonQuery();
                 cmd.CommandText = insertStmt;
 
                 cmd.Parameters.Add("@timeStamp", SqlDbType.DateTime);
 
                 cmd.Parameters["@purchaseTotal"].Value = Timestamp;
 
+                connection.Open();
                 cmd.ExecuteNonQuery();
                 connection.Close();
             }
