@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 using System.Xml.Schema;
 using System.Reflection;
 
-namespace DatagramTest
+namespace TLGPizza
 {
     class Program
     {
