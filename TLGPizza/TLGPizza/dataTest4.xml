@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Datagram Id="abc1234" Timestamp="2000-12-13T12:12:12" xmlns="http://Namespaces.TLGPizza.com/Datagram-v1.1">
+  <Transaction Id="str1234" Timestamp="2000-12-13T12:12:12">
+    <Customer Id="str1234" Language="???">
+      <Name>John Campbell</Name>
+      <Address Id="str1234" Type="Contact">
+        <AddressLine1>1234 12th Ave E</AddressLine1>
+        <AddressLine2>Apt 23</AddressLine2>
+        <City>Seattle</City>
+        <StateProvince>WA</StateProvince>
+        <PostalCode>97102</PostalCode>
+        <MobileTelephone>9725553251</MobileTelephone>
+        <AlternateTelephone>9725553251</AlternateTelephone>
+        <Notes>str1234</Notes>
+      </Address>
+      <Notes>str1234</Notes>
+    </Customer>
+    <Order OrderingStore="Jueno" ProducingStore="Jueno" ReadyTime="2000-12-13T12:12:12">
+      <Assembly SKU="str1234" Description="str1234" Quantity="12" UnitPrice="123.45" Taxable="true">
+        <Item>
+          <Component SKU="str1234" Description="str1234" Quantity="123.45" UnitPrice="12.45" Taxable="true" />
+          <Notes>str1234</Notes>
+        </Item>
+      </Assembly>
+      <Notes>str1234</Notes>
+    </Order>
+    <Payment>
+      <PurchaseTotal Amount="123.45" />
+      <SalesTax Amount="123.45" Rate="123.45" Jurisdiction="str1234" />
+      <VAT Amount="123.45" Rate="123.45" Jurisdiction="str1234" />
+      <Prepayment Amount="123.45" DatePaid="2012-12-13" TransactionId="str1234" AuthorizationCode="str1234" />
+      <PaymentDue Amount="123.45" DueDate="2000-12-13" />
+      <Notes>str1234</Notes>
+    </Payment>
+  </Transaction>
+</Datagram>

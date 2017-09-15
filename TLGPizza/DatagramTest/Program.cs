@@ -10,7 +10,7 @@ using System.Reflection;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace DatagramTest
+namespace TLGPizza
 {
     class Program
     {
