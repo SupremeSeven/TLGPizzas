@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Document created with online XML Editor http://xmlgrid.net 2017/09/13 10:29:52  -->
+   <Datagram Id="{7BE80E66-E421-4AF7-980E-5AF3FA2103EC}" Timestamp="2017-09-13T18:06:55+00:00" xmlns="http://Namespaces.TLGPizza.com/Datagram-v1.1">
+       <Transaction Id="{EEDF72E4-86C4-4722-B52E-4FD04F120FE5}" Timestamp="2017-09-13T18:06:55+00:00">
+           <Customer Id="{eac61218-f989-4cba-8de7-57069510e182}" Language="eng">
+               <Name>Bob Smith</Name>
+               <Address Id="{C9A01278-EF69-478B-A186-E45C365469BE}" Type="Contact">
+                   <AddressLine1>101 Main St.</AddressLine1>
+                   <AddressLine2>Building 1</AddressLine2>
+                   <AddressLine2>Apt. 300</AddressLine2>
+                   <City>Nowheresville</City>
+                   <StateProvince>WA</StateProvince>
+                   <PostalCode>98765</PostalCode>
+                   <MobileTelephone>2345678901</MobileTelephone>
+                   <AlternateTelephone>3456789012</AlternateTelephone>
+                   <Notes>Notes #1</Notes>
+                   <Notes>Notes #2</Notes>
+                   <Notes>Notes #3</Notes>
+               </Address>
+               <Address Id="{9228D9ED-C45E-4059-9B53-A41836E722B1}" Type="Delivery">
+                   <AddressLine1>101 Main St.</AddressLine1>
+                   <AddressLine2>Building1</AddressLine2>
+                   <AddressLine2>Apt. 300</AddressLine2>
+                   <City>Nowheresville</City>
+                   <StateProvince>WA</StateProvince>
+                   <PostalCode>98765</PostalCode>
+                   <MobileTelephone>2345678901</MobileTelephone>
+                   <AlternateTelephone>3456789012</AlternateTelephone>
+                   <Notes>Has big noisy dog.</Notes>
+                   <Notes>Dog will bite.</Notes>
+                   <Notes>Call from front office and make him come and pick it up there.</Notes>
+               </Address>
+               <Address Id="{27548c26-0ec0-4354-a0ac-d326044df6a4}" Type="Delivery">
+                   <AddressLine1>1001 SE Wherever Blvd.</AddressLine1>
+                   <AddressLine2></AddressLine2>
+                   <City>Nowheresville</City>
+                   <StateProvince>WA</StateProvince>
+                   <PostalCode>98765</PostalCode>
+                   <MobileTelephone>2345678901</MobileTelephone>
+                   <AlternateTelephone>9995554567</AlternateTelephone>
+                   <Notes>Previous Address</Notes>
+                   <Notes>Notes #2</Notes>
+                   <Notes>Notes #3</Notes>
+               </Address>
+               <Notes>Customer since 2016</Notes>
+               <Notes>Frequent Pi-er</Notes>
+               <Notes></Notes>
+           </Customer>
+           <Order OrderingStore="000001" ProducingStore="000002" ReadyTime="2017-09-14T10:06:55-08:00">
+               <Assembly SKU="CheeseSmall" Description="Cheese Pizza Small" Quantity="1.0" UnitPrice="12.99" Taxable="1">
+                   <Item>
+                       <Component SKU="CheeseSmall" Description="Cheese Pizza Small" Quantity="1.0" UnitPrice="12.99" Taxable="0">Small Cheese Pizza</Component>
+                       <Notes>Notes #1</Notes>
+                       <Notes>Notes #3</Notes>
+                   </Item>
+               </Assembly>
+               <Assembly SKU="CzSaladCombo" Description="Caesar Salad Combo Meal" Quantity="2.0" UnitPrice="18.74" Taxable="1">
+                   <Item>
+                       <Component SKU="CaesarSaladLg" Description="Caesar Salad Large" Quantity="2.0" UnitPrice="8.99" Taxable="0">Large Caesar Salad</Component>
+                       <Component SKU="CzComboDiscoun" Description="Caesar Combo Discount" Quantity="2.0" UnitPrice="-1.19" Taxable="0">Caesar Salad Combo Discount</Component>
+                       <Notes>Notes #3</Notes>
+                   </Item>
+                   <Item>
+                       <Component SKU="SPLimonSingle" Description="Pelligrino Limonata Single" Quantity="1.0" UnitPrice="1.19" Taxable="0">San Pelligrino Limonata</Component>
+                       <Notes>Notes #2</Notes>
+                   </Item>
+                   <Item>
+                       <Component SKU="MexicanCokeBot" Description="Mexican Coke Bottle" Quantity="1.0" UnitPrice="2.75" Taxable="0">Mexican Coke</Component>
+                       <Notes>Notes #1</Notes>
+                   </Item>
+               </Assembly>
+               <Assembly SKU="FreqPier0917" Description="Frequent Pi-er September 2017" Quantity="1.0" UnitPrice="13.54" Taxable="1">
+                   <Item>
+                       <Component SKU="GelatoChoc" Description="Gelato Chocolate" Quantity="1.0" UnitPrice="8.99" Taxable="0">Gelataimo Gelato - Chocolate</Component>
+                       <Notes>Notes #1</Notes>
+                       <Notes>Notes #3</Notes>
+                       <Notes>Notes #2</Notes>
+                   </Item>
+                   <Item>
+                       <Component SKU="SorbetBBerry" Description="Sorbet Blackberry" Quantity="1.0" UnitPrice="8.99" Taxable="0">Gelataimo Sorbet - Seasonal Blackberry</Component>
+                       <Component SKU="0917PierDeal" Description="Half Off Second Gelato 0917" Quantity="1.0" UnitPrice="-4.44" Taxable="0">Buy one pint of gelato, get one at half price (Frequent Pier)</Component>
+                       <Notes>Notes #1</Notes>
+                       <Notes>Notes #2</Notes>
+                       <Notes>Notes #3</Notes>
+                   </Item>
+                  </Assembly>
+               <Assembly SKU="12thManLarge" Description="12th Man Pizza Large" Quantity="1.0" UnitPrice="30.99" Taxable="1">
+                   <Item>
+                       <Component SKU="12thManLarge" Description="12th Man Pizza Large" Quantity="1.0" UnitPrice="27.99" Taxable="0">Large 12th Man Pizza</Component>
+                       <Component SKU="RedOnionsLg" Description="Add Red Onions Large" Quantity="0.5" UnitPrice="3.00" Taxable="0">Add Red Onions</Component>
+                       <Component SKU="RM-Olives" Description="Remove Item Olives" Quantity="1.0" UnitPrice="0.00" Taxable="0">Minus Olives</Component>
+                       <Notes>PLEASE MAKE SURE THAT YOU REMOVE THE OLIVES BECAUSE I AM ALLERGIC TO THEM.</Notes>
+                       <Notes>Notes #3</Notes>
+                       <Notes>Notes #2</Notes>
+                   </Item>
+               </Assembly>
+               <Assembly SKU="Calzone" Description="Calzone" Quantity="1.0" UnitPrice="10.50" Taxable="1">
+                   <Item>
+                       <Component SKU="CalzoneBase" Description="Calzone Base" Quantity="1.0" UnitPrice="8.00" Taxable="0">Calzone Base</Component>
+                       <Component SKU="CalzPepperoni" Description="Calzone Add Pepperoni" Quantity="1.0" UnitPrice="1.25" Taxable="0">Add pepperoni</Component>
+                       <Component SKU="CalzoneOnions" Description="Calzone Add Onions" Quantity="2.0" UnitPrice="1.25" Taxable="0">Add Onions</Component>
+                       <Notes></Notes>
+                       <Notes></Notes>
+                       <Notes></Notes>
+                   </Item>
+               </Assembly>
+               <Notes>Notes #1</Notes>
+               <Notes>Notes #2</Notes>
+               <Notes>Notes #3</Notes>
+           </Order>
+           <Payment>
+               <PurchaseTotal Amount="82.66">Purchase Total</PurchaseTotal>
+               <SalesTax Amount="6.41" Rate="0.084" Jurisdiction="WA0601">Washington Sales Tax</SalesTax>
+               <VAT Amount="0.0" Rate="0.0" Jurisdiction="000000"></VAT>
+               <Prepayment Amount="40.00" DatePaid="2017-09-13T18:06:55+00:00" TransactionId="{56a59ed3-7dbc-4062-ae62-f3d1aa6ea2e6}" AuthorizationCode="{07c86743-fc2b-47c6-aa8e-4edbba05558b}">Prepayment Amount</Prepayment>
+               <Prepayment Amount="20.00" DatePaid="2017-09-13T18:07:33+00:00" TransactionId="{f53ee2c1-56d0-415a-b136-05980c98e292}" AuthorizationCode="{c32263f7-fd2a-4832-aed0-2558402f46c8}">Prepayment Amount</Prepayment>
+               <PaymentDue Amount="22.66" DueDate="2017-09-13">Balance Due</PaymentDue>
+               <Notes>Prepayment via VISA ending in 9999.</Notes>
+               <Notes>Prepayment via MasterCard ending in 4444.</Notes>
+               <Notes>Frequent Pi-er Deal applied.</Notes>
+           </Payment>
+       </Transaction>
+   </Datagram>
