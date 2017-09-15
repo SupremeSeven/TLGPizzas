@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Datagram Id="str1234" Timestamp="2012-12-13T12:12:12" xmlns="http://Namespaces.TLGPizza.com/Datagram-v1.1">
-  <Transaction Id="str1234" Timestamp="2012-12-13T12:12:12">
-    <Customer Id="str1234" Language="???">
-      <Name>str1234 str1234</Name>
+<Datagram Id="1234" Timestamp="2012-12-13T12:12:12" xmlns="http://Namespaces.TLGPizza.com/Datagram-v1.1">
+  <Transaction Id="1234" Timestamp="2012-12-13T12:12:12">
+    <Customer Id="1234" Language="???">
+      <Name>str1234 last1234</Name>
       <Address Id="str1234" Type="Contact">
         <AddressLine1>str1234</AddressLine1>
         <AddressLine2>str1234</AddressLine2>
         <City>str1234</City>
         <StateProvince>str1234</StateProvince>
-        <PostalCode>1234</PostalCode>
+        <PostalCode>12345</PostalCode>
         <MobileTelephone>123456789</MobileTelephone>
         <AlternateTelephone>123456789</AlternateTelephone>
         <Notes>str1234</Notes>

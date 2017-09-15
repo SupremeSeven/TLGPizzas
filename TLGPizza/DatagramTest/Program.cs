@@ -7,6 +7,8 @@ using System.IO;
 using System.Xml.Serialization;
 using System.Xml.Schema;
 using System.Reflection;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace TLGPizza
 {
@@ -22,6 +24,7 @@ namespace TLGPizza
                 data = (Datagram)serializer.Deserialize(datagramReader);
             }
 
+            TruncateTables();
             data.InsertIntoDB();
 
         }
@@ -58,6 +61,46 @@ namespace TLGPizza
                 else
                 {
                     Console.WriteLine("{0}{1}: {2}", indentString, property.Name, propValue);
+                }
+            }
+        }
+
+        static void TruncateTables()
+        {
+            string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=TLGPizza;Integrated Security=True";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string truncateStmt = "TRUNCATE TABLE[TLGPizza].[Datagram];";
+                using (SqlCommand cmd = new SqlCommand(truncateStmt, connection))
+                {
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "TRUNCATE TABLE[TLGPizza].[Address];";
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "TRUNCATE TABLE[TLGPizza].[Assembly];";
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "TRUNCATE TABLE[TLGPizza].[Component];";
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "TRUNCATE TABLE[TLGPizza].[Customer];";
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "TRUNCATE TABLE[TLGPizza].[Item];";
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "TRUNCATE TABLE[TLGPizza].[Order];";
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "TRUNCATE TABLE[TLGPizza].[Payment];";
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "TRUNCATE TABLE[TLGPizza].[PaymentDue];";
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "TRUNCATE TABLE[TLGPizza].[Prepayment];";
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "TRUNCATE TABLE[TLGPizza].[Store];";
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "TRUNCATE TABLE[TLGPizza].[Tax];";
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "TRUNCATE TABLE[TLGPizza].[Transaction];";
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
                 }
             }
         }
