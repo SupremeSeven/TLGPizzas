@@ -20,97 +20,112 @@ namespace TLGPizza
         }
     }
 
-    class Stores
+    public class Stores
     {
-        private List<Store> stores = new List<Store>();
+        public List<Store> stores = new List<Store>();
 
-        public Stores()
+        public List<string> StoreName
         {
+            get
+            {
+                List<string> name = new List<string>();
+                     for (int i = 0; i < stores.Count; i++)
+                {
+                    name.Add(stores[i].name);
+                }
+                return name;
+            }
+        }
+        public Stores()
+{
 
-            //string StoreSales = @"SELECT s.Name, pd.Amount, p.PurchaseTotal
-            //                            FROM TLGPizza.Store s
-            //                            JOIN TLGPizza.Payment p
-            //                            ON s.StoreId = p.StoreId
-            //                            JOIN TLGPizza.PaymentDue pd
-            //                            ON pd.PaymentDueId = p.PaymentDueId
-            //                            ORDER BY s.Name;";
+    //string StoreSales = @"SELECT s.Name, pd.Amount, p.PurchaseTotal
+    //                            FROM TLGPizza.Store s
+    //                            JOIN TLGPizza.Payment p
+    //                            ON s.StoreId = p.StoreId
+    //                            JOIN TLGPizza.PaymentDue pd
+    //                            ON pd.PaymentDueId = p.PaymentDueId
+    //                            ORDER BY s.Name;";
 
-            string constring = ConfigurationManager.ConnectionStrings["Connection_String"].ConnectionString;
+    string constring = ConfigurationManager.ConnectionStrings["Connection_String"].ConnectionString;
 
-            Console.WriteLine(constring);
+    Console.WriteLine(constring);
 
-            string StoreSales = @"SELECT s.Name, p.PurchaseTotal
+
+    string StoreSales = @"SELECT s.Name, p.PurchaseTotal
                                         FROM TLGPizza.Store s
                                         JOIN TLGPizza.Payment p
                                         ON s.StoreId = p.StoreId
                                         ORDER BY s.Name;";
 
-            var table = new DataTable();
-            using (var da = new SqlDataAdapter(StoreSales, constring))
-            {
-                da.Fill(table);
-            }
-
-            foreach (DataRow row in table.Rows)
-            {
-                Console.WriteLine("{0}:{1}", row[0], row[1]);
-            }
-            Console.WriteLine();
-            Console.WriteLine();
-
-            Dictionary <string, List<decimal>> storeData = new Dictionary<string, List<decimal>>();
-
-            foreach (DataRow row in table.Rows)
-            {
-                if (storeData.ContainsKey((string)row[0]))
-                {
-                    storeData[(string)row[0]].Add((decimal)row[1]);
-                }
-                else
-                {
-                    storeData[(string)row[0]] = new List<decimal>();
-                    storeData[(string)row[0]].Add((decimal)row[1]);
-                }
-            }
-            
-            foreach (var storeName in storeData.Keys)
-            {
-                stores.Add(new Store(storeName, storeData[storeName]));
-            }
-        }
-
-        public void PrintStoreStats()
-        {
-            Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!The Store Stats!!!!!!!!!!!!!!!!!!!!!");
-            for (int i = 0; i < stores.Count; i++)
-            {
-                Console.WriteLine("{0}: {1}", stores[i].name, stores[i].TotalSales);
-            }
-        }
-    }
-
-    class Store
+    var table = new DataTable();
+    using (var da = new SqlDataAdapter(StoreSales, constring))
     {
-        public string name;
-        private List<decimal> sales;
+        da.Fill(table);
+    }
 
-        public Store(string name, List<decimal> sales)
+    foreach (DataRow row in table.Rows)
+    {
+        Console.WriteLine("{0}:{1}", row[0], row[1]);
+    }
+    Console.WriteLine();
+    Console.WriteLine();
+
+    Dictionary<string, List<decimal>> storeData = new Dictionary<string, List<decimal>>();
+
+    foreach (DataRow row in table.Rows)
+    {
+        if (storeData.ContainsKey((string)row[0]))
         {
-            this.name = name;
-            this.sales = sales;
+            storeData[(string)row[0]].Add((decimal)row[1]);
         }
-
-        public decimal TotalSales
+        else
         {
-            get
-            {
-                decimal sum = 0.00m;
-                for (int i = 0; i < sales.Count; i++)
-                {
-                    sum += sales[i];
-                }
-                return sum;
-            }
+            storeData[(string)row[0]] = new List<decimal>();
+            storeData[(string)row[0]].Add((decimal)row[1]);
         }
     }
+
+    foreach (var storeName in storeData.Keys)
+    {
+        stores.Add(new Store(storeName, storeData[storeName]));
+    }
+}
+
+public void PrintStoreStats()
+{
+    Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!The Store Stats!!!!!!!!!!!!!!!!!!!!!");
+    for (int i = 0; i < stores.Count; i++)
+    {
+        Console.WriteLine("{0}: {1}", stores[i].name, stores[i].TotalSales);
+    }
+}
+    }
+
+    public class Store
+{
+    public string name;
+    private List<decimal> sales;
+
+    public Store(string name, List<decimal> sales)
+    {
+        this.name = name;
+        this.sales = sales;
+    }
+
+    public decimal TotalSales
+    {
+        get
+        {
+            decimal sum = 0.00m;
+            for (int i = 0; i < sales.Count; i++)
+            {
+                sum += sales[i];
+            }
+            return sum;
+        }
+    }
+
+
+}
 }

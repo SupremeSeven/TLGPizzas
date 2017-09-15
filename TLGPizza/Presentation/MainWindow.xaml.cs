@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Configuration;
+using TLGPizza;
 
 namespace Presentation
 {
@@ -32,8 +33,14 @@ namespace Presentation
             InitializeComponent();
             con = new SqlConnection(constring);
 
-            List<string> Store = new List<string> { "testStore1", "testStore2", "testStore3" };
-            StoreList.ItemsSource = Store;
+            
+           
+             Stores stores = new Stores();
+             stores.PrintStoreStats();
+           
+
+            //List<string> Store = new List<string> { "testStore1", "testStore2", "testStore3" };
+            StoreList.ItemsSource = stores.StoreName;
         }
 
         //    string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS; 
