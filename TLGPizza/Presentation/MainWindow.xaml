@@ -7,14 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <ListBox Name="StoreList" HorizontalAlignment="Left" Height="196" Margin="22,60,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="22,17,0,0" TextWrapping="Wrap" Text="Select Store:" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+        <ListBox Name="StoreList" HorizontalAlignment="Left" Height="196" Margin="40,83,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="40,46,0,0" TextWrapping="Wrap" Text="Select Store:" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="342,93,0,0" TextWrapping="Wrap" Text="Results:" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
         <Button Name="ShowSales" Content="Show Sales" 
-                HorizontalAlignment="Left" Margin="204,134,0,0" 
+                HorizontalAlignment="Left" Margin="204,169,0,0" 
                 VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <Button Content="TestConnection" 
-                HorizontalAlignment="Left" Margin="194,96,0,0" 
+                HorizontalAlignment="Left" Margin="193,119,0,0" 
                 VerticalAlignment="Top" Width="99" Click="TestConnection_Click"/>
         <TextBox x:Name="ResultsBox" HorizontalAlignment="Left" Height="104" Margin="330,134,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="142" RenderTransformOrigin="0.524,0.477"/>
 
