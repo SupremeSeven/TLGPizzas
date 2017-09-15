@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{777F977B-F58A-4D09-A128-D69DC858AB9C}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>TLGPizza</RootNamespace>
     <AssemblyName>TLGPizza</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
