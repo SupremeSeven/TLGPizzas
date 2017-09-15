@@ -28,6 +28,8 @@ namespace Presentation
           ["Connection_String"].ConnectionString;
 
         SqlConnection con;
+        Stores stores;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -35,11 +37,11 @@ namespace Presentation
 
             
            
-             Stores stores = new Stores();
-             stores.PrintStoreStats();
+             stores = new Stores();
+             //stores.PrintStoreStats();
            
 
-            //List<string> Store = new List<string> { "testStore1", "testStore2", "testStore3" };
+            
             StoreList.ItemsSource = stores.StoreName;
         }
 
@@ -70,7 +72,8 @@ namespace Presentation
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("foo");
+            string store = StoreList.SelectedItem.ToString();
+            ResultsBox.Text = stores.PrintStoreStats(store);
         }
 
         private void TestConnection_Click(object sender, RoutedEventArgs e)
