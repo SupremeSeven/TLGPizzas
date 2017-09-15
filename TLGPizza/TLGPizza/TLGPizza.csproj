@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pizza.cs" />
     <Compile Include="TLGPizza.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
