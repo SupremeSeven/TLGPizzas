@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Datagram Id="1235" Timestamp="2012-12-13T12:12:12" xmlns="http://Namespaces.TLGPizza.com/Datagram-v1.1">
+	<Transaction Id="1235" Timestamp="2012-12-13T12:12:12">
+		<Customer Id="1235" Language="???">
+			<Name>Delilah Jenkins</Name>
+			<Address Id="str1235" Type="Contact">
+				<AddressLine1>1235 12th Ave E</AddressLine1>
+				<AddressLine2>Apt 22</AddressLine2>
+				<City>Bellevue</City>
+				<StateProvince>WA</StateProvince>
+				<PostalCode>98004</PostalCode>
+				<MobileTelephone>5553251</MobileTelephone>
+				<AlternateTelephone>5553251</AlternateTelephone>
+				<Notes>str1235</Notes>
+			</Address>
+			<Notes>str1235</Notes>
+		</Customer>
+		<Order OrderingStore="1235" ProducingStore="1235" ReadyTime="2012-12-13T12:12:12">
+			<Assembly SKU="str1235" Description="str1235" Quantity="1235" UnitPrice="123.45" Taxable="true">
+				<Item>
+					<Component SKU="str1235" Description="str1235" Quantity="123.45" UnitPrice="123.45" Taxable="true" />
+					<Notes>str1235</Notes>
+				</Item>
+			</Assembly>
+			<Notes>str1235</Notes>
+		</Order>
+		<Payment>
+			<PurchaseTotal Amount="123.45" />
+			<SalesTax Amount="123.45" Rate="123.45" Jurisdiction="str1235" />
+			<VAT Amount="123.45" Rate="123.45" Jurisdiction="str1235" />
+			<Prepayment Amount="123.45" DatePaid="2012-12-13" TransactionId="str1235" AuthorizationCode="str1235" />
+			<PaymentDue Amount="123.45" DueDate="2012-12-13" />
+			<Notes>str1235</Notes>
+		</Payment>
+	</Transaction>
+</Datagram>

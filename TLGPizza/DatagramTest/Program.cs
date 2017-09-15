@@ -18,7 +18,7 @@ namespace TLGPizza
 
         static void Main()
         {
-            using (StreamReader datagramReader = new StreamReader(@"..\..\dataTest3.xml"))
+            using (StreamReader datagramReader = new StreamReader(@"..\..\dataTest5.xml"))
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(Datagram));
                 data = (Datagram)serializer.Deserialize(datagramReader);
