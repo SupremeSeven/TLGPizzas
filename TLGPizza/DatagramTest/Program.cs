@@ -14,17 +14,17 @@ namespace TLGPizza
     {
         static Datagram data;
 
-        static void Main()
-        {
-            using (StreamReader datagramReader = new StreamReader(@"..\..\dataTest3.xml"))
-            {
-                XmlSerializer serializer = new XmlSerializer(typeof(Datagram));
-                data = (Datagram)serializer.Deserialize(datagramReader);
-            }
+        //static void Main()
+        //{
+        //    using (StreamReader datagramReader = new StreamReader(@"..\..\dataTest3.xml"))
+        //    {
+        //        XmlSerializer serializer = new XmlSerializer(typeof(Datagram));
+        //        data = (Datagram)serializer.Deserialize(datagramReader);
+        //    }
 
-            data.InsertIntoDB();
+        //    data.InsertIntoDB();
 
-        }
+        //}
 
         static void PrintData()
         {

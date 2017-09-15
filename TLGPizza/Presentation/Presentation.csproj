@@ -101,5 +101,11 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TLGPizza\TLGPizza.csproj">
+      <Project>{777f977b-f58a-4d09-a128-d69dc858ab9c}</Project>
+      <Name>TLGPizza</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
