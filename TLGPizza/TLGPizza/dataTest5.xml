@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Datagram Id="abc1234" Timestamp="2009-12-13T12:12:12" xmlns="http://Namespaces.TLGPizza.com/Datagram-v1.1">
+<Datagram Id="1235" Timestamp="2009-12-13T12:12:12" xmlns="http://Namespaces.TLGPizza.com/Datagram-v1.1">
   <Transaction Id="str1234" Timestamp="2009-12-13T12:12:12">
     <Customer Id="str1234" Language="???">
       <Name>Delilah Jenkins</Name>
