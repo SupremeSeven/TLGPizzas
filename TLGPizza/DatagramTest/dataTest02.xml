@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Datagram Id="19935" Timestamp="2017-01-04T09:30:10-08:00"
+ xmlns="http://Namespaces.TLGPizza.com/Datagram-v1.1">
+  <Transaction Id="34052" Timestamp="2017-01-04T09:30:10-08:00" >
+    <Customer Id="52786" Language="eng" >
+      <Name>Luigi Donatello</Name>
+      <Address Id="81269" Type="Contact">
+        <AddressLine1>3932 88th St</AddressLine1>
+        <AddressLine2>Apt. 604</AddressLine2>
+        <City></City>
+        <StateProvince></StateProvince>
+        <PostalCode>50419</PostalCode>
+        <MobileTelephone>7205757238</MobileTelephone>
+        <AlternateTelephone>8944084564</AlternateTelephone>
+        <Notes></Notes>
+      </Address>
+      <Address Id="17714" Type="Delivery">
+        <AddressLine1>6207 15th St</AddressLine1>
+        <AddressLine2></AddressLine2>
+        <City></City>
+        <StateProvince></StateProvince>
+        <PostalCode>44238</PostalCode>
+        <MobileTelephone>5629263407</MobileTelephone>
+        <AlternateTelephone>4262442259</AlternateTelephone>
+        <Notes></Notes>
+      </Address>
+      <Notes></Notes>
+    </Customer>
+    <Order OrderingStore="2" ProducingStore="2" ReadyTime="2017-01-04T09:30:10-08:00">
+      <Assembly SKU="3" Description="3 large pizza" Quantity="3" UnitPrice="12" Taxable="1">
+        <Item>
+          <Component SKU="9992" Description="Gluten Free Dough" Quantity="1" UnitPrice="1" Taxable="1" />
+          <Component SKU="9994" Description="Four Cheese Blend Topping" Quantity="1" UnitPrice="1" Taxable="1" />
+          <Component SKU="9993" Description="Bruschetta Sauce" Quantity="1" UnitPrice="1" Taxable="1" />
+          <Component SKU="111" Description="Pepperoni" Quantity="1" UnitPrice="1" Taxable="1" />
+          <Component SKU="333" Description="Mushrooms" Quantity="1" UnitPrice="1" Taxable="1" />
+          <Component SKU="444" Description="Olives" Quantity="1" UnitPrice="1" Taxable="1" />
+          <Component SKU="666" Description="Pineapple" Quantity="1" UnitPrice="1.5" Taxable="1" />
+          <Component SKU="777" Description="Cheese" Quantity="1" UnitPrice="2" Taxable="1" />
+          <Notes></Notes>
+        </Item>
+      </Assembly>
+      <Notes></Notes>
+    </Order>
+    <Payment>
+      <PurchaseTotal Amount="15" />
+      <SalesTax Amount="1.50" Rate="10" Jurisdiction="XXXXXX" />
+      <VAT Amount="0" Rate="0" Jurisdiction="XXXXXX" />
+      <Prepayment Amount="0" DatePaid="2017-05-30" TransactionId="{09B5CE36-B013-413A-8173-42F16489CF40}" AuthorizationCode="{566349E6-C3D1-4B58-98F9-5A6C39459E69}" />
+      <PaymentDue Amount="16.50" DueDate="2017-01-04" />
+      <Notes></Notes>
+    </Payment>
+  </Transaction>
+</Datagram>

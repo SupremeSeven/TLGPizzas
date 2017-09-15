@@ -18,14 +18,20 @@ namespace TLGPizza
 
         static void Main()
         {
-            using (StreamReader datagramReader = new StreamReader(@"..\..\dataTest5.xml"))
+            TruncateTables();
+
+            for (int i = 0; i < 10; i++)
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(Datagram));
-                data = (Datagram)serializer.Deserialize(datagramReader);
+                using (StreamReader datagramReader = new StreamReader($"..\\..\\dataTest0{i}.xml"))
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(Datagram));
+                    data = (Datagram)serializer.Deserialize(datagramReader);
+                }
+
+                data.InsertIntoDB();
             }
 
-            TruncateTables();
-            data.InsertIntoDB();
+
 
         }
 

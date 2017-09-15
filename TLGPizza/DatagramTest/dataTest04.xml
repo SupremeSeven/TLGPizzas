@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Datagram Id="43392" Timestamp="2017-04-05T09:30:10-08:00"
+ xmlns="http://Namespaces.TLGPizza.com/Datagram-v1.1">
+  <Transaction Id="46815" Timestamp="2017-04-05T09:30:10-08:00" >
+    <Customer Id="77786" Language="eng" >
+      <Name>Leo Raph</Name>
+      <Address Id="6337" Type="Contact">
+        <AddressLine1>6854 76th St</AddressLine1>
+        <AddressLine2>Apt. 914</AddressLine2>
+        <City></City>
+        <StateProvince></StateProvince>
+        <PostalCode>33380</PostalCode>
+        <MobileTelephone>9259471130</MobileTelephone>
+        <AlternateTelephone>2467566357</AlternateTelephone>
+        <Notes></Notes>
+      </Address>
+      <Address Id="36605" Type="Delivery">
+        <AddressLine1>7944 43th St</AddressLine1>
+        <AddressLine2></AddressLine2>
+        <City></City>
+        <StateProvince></StateProvince>
+        <PostalCode>25728</PostalCode>
+        <MobileTelephone>9319624157</MobileTelephone>
+        <AlternateTelephone>9469718713</AlternateTelephone>
+        <Notes></Notes>
+      </Address>
+      <Notes></Notes>
+    </Customer>
+    <Order OrderingStore="1" ProducingStore="3" ReadyTime="2017-04-05T09:30:10-08:00">
+      <Assembly SKU="2" Description="3 med pizza" Quantity="3" UnitPrice="9" Taxable="1">
+        <Item>
+          <Component SKU="9991" Description="Whole Grain Dough" Quantity="1" UnitPrice="1" Taxable="1" />
+          <Component SKU="9994" Description="Four Cheese Blend Topping" Quantity="1" UnitPrice="1" Taxable="1" />
+          <Component SKU="9998" Description="Sweet Chili Sauce" Quantity="1" UnitPrice="1" Taxable="1" />
+          <Component SKU="333" Description="Mushrooms" Quantity="1" UnitPrice="1" Taxable="1" />
+          <Component SKU="444" Description="Olives" Quantity="1" UnitPrice="1" Taxable="1" />
+          <Component SKU="555" Description="$5.00 Off Coupon" Quantity="1" UnitPrice="-5" Taxable="1" />
+          <Component SKU="777" Description="Cheese" Quantity="1" UnitPrice="2" Taxable="1" />
+          <Notes></Notes>
+        </Item>
+      </Assembly>
+      <Notes></Notes>
+    </Order>
+    <Payment>
+      <PurchaseTotal Amount="3" />
+      <SalesTax Amount="0.30" Rate="10" Jurisdiction="XXXXXX" />
+      <VAT Amount="0" Rate="0" Jurisdiction="XXXXXX" />
+      <Prepayment Amount="0" DatePaid="2017-05-30" TransactionId="{09B5CE36-B013-413A-8173-42F16489CF40}" AuthorizationCode="{566349E6-C3D1-4B58-98F9-5A6C39459E69}" />
+      <PaymentDue Amount="3.30" DueDate="2017-04-05" />
+      <Notes></Notes>
+    </Payment>
+  </Transaction>
+</Datagram>

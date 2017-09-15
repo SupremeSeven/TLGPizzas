@@ -157,8 +157,8 @@ public partial class DatagramTransactionCustomerAddress
                 cmd.Parameters.Add("@City", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@State", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@PostalCode", SqlDbType.Int);
-                cmd.Parameters.Add("@MobileTelephone", SqlDbType.Int);
-                cmd.Parameters.Add("@AlternateTelephone", SqlDbType.Int);
+                cmd.Parameters.Add("@MobileTelephone", SqlDbType.BigInt);
+                cmd.Parameters.Add("@AlternateTelephone", SqlDbType.BigInt);
                 cmd.Parameters.Add("@Notes", SqlDbType.NVarChar);
 
                 cmd.Parameters["@Type"].Value = Type;
@@ -167,8 +167,8 @@ public partial class DatagramTransactionCustomerAddress
                 cmd.Parameters["@City"].Value = City;
                 cmd.Parameters["@State"].Value = StateProvince;
                 cmd.Parameters["@PostalCode"].Value = Int32.Parse(PostalCode);
-                cmd.Parameters["@MobileTelephone"].Value = Int32.Parse(MobileTelephone);
-                cmd.Parameters["@AlternateTelephone"].Value = Int32.Parse(AlternateTelephone);
+                cmd.Parameters["@MobileTelephone"].Value = Int64.Parse(MobileTelephone);
+                cmd.Parameters["@AlternateTelephone"].Value = Int64.Parse(AlternateTelephone);
                 cmd.Parameters["@Notes"].Value = Notes;
 
                 connection.Open();
@@ -331,7 +331,7 @@ public partial class DatagramTransactionPaymentSalesTax
 
 public partial class DatagramTransactionPayment
 {
-    public void InsertIntoDB()
+    public void InsertIntoDB(int StoreId)
     {
         foreach (DatagramTransactionPaymentSalesTax tax in SalesTax)
         {
@@ -350,16 +350,18 @@ public partial class DatagramTransactionPayment
         string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=TLGPizza;Integrated Security=True";
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
-            string insertStmt = "INSERT INTO [TLGPizza].[Payment] (PurchaseTotal, Notes) VALUES(@purchaseTotal, @notes);";
+            string insertStmt = "INSERT INTO [TLGPizza].[Payment] (StoreId, PurchaseTotal, Notes) VALUES(@StoreId, @purchaseTotal, @notes);";
             using (SqlCommand cmd = new SqlCommand(insertStmt, connection))
             {
                 cmd.CommandText = insertStmt;
 
                 cmd.Parameters.Add("@purchaseTotal", SqlDbType.Decimal);
                 cmd.Parameters.Add("@notes", SqlDbType.VarChar);
+                cmd.Parameters.Add("@StoreId", SqlDbType.Int);
 
                 cmd.Parameters["@purchaseTotal"].Value = PurchaseTotal.Amount;
                 cmd.Parameters["@notes"].Value = Notes;
+                cmd.Parameters["@StoreId"].Value = StoreId;
 
                 connection.Open();
                 cmd.ExecuteNonQuery();
@@ -396,7 +398,7 @@ public partial class DatagramTransaction
         }
         Customer.InsertIntoDB();
         Order.InsertIntoDB();
-        Payment.InsertIntoDB();
+        Payment.InsertIntoDB(Int32.Parse(Order.OrderingStore));
     }
 }
 
